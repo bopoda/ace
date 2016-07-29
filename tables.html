@@ -10,12 +10,12 @@
 
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
 
 		<!-- text fonts -->
-		<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
 
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
@@ -23,6 +23,8 @@
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -42,12 +44,8 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="navbar-container" id="navbar-container">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
 					<span class="sr-only">Toggle sidebar</span>
 
@@ -69,7 +67,7 @@
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-						<li class="grey">
+						<li class="grey dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-tasks"></i>
 								<span class="badge badge-grey">4</span>
@@ -146,7 +144,7 @@
 							</ul>
 						</li>
 
-						<li class="purple">
+						<li class="purple dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 								<span class="badge badge-important">8</span>
@@ -214,7 +212,7 @@
 							</ul>
 						</li>
 
-						<li class="green">
+						<li class="green dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 								<span class="badge badge-success">5</span>
@@ -230,7 +228,7 @@
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+												<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -247,7 +245,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+												<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -264,7 +262,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+												<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -281,7 +279,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+												<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -298,7 +296,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+												<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -324,9 +322,9 @@
 							</ul>
 						</li>
 
-						<li class="light-blue">
+						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -365,14 +363,14 @@
 			</div><!-- /.navbar-container -->
 		</div>
 
-		<div class="main-container" id="main-container">
+		<div class="main-container ace-save-state" id="main-container">
 			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+				try{ace.settings.loadState('main-container')}catch(e){}
 			</script>
 
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
 				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
@@ -793,6 +791,15 @@
 							</li>
 
 							<li class="">
+								<a href="search.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Search Results
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
 								<a href="email.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Email Templates
@@ -877,21 +884,13 @@
 				</ul><!-- /.nav-list -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
 				</div>
-
-				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
-				</script>
 			</div>
 
 			<div class="main-content">
 				<div class="main-content-inner">
-					<div class="breadcrumbs" id="breadcrumbs">
-						<script type="text/javascript">
-							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-						</script>
-
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
@@ -935,27 +934,27 @@
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
 										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
 										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
 										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
 										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
 										<label class="lbl" for="ace-settings-add-container">
 											Inside
 											<b>.container</b>
@@ -965,17 +964,17 @@
 
 								<div class="pull-left width-50">
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
 										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
 										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
 										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
 									</div>
 								</div><!-- /.pull-left -->
@@ -997,7 +996,7 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
 									<div class="col-xs-12">
-										<table id="simple-table" class="table table-striped table-bordered table-hover">
+										<table id="simple-table" class="table  table-bordered table-hover">
 											<thead>
 												<tr>
 													<th class="center">
@@ -1006,6 +1005,7 @@
 															<span class="lbl"></span>
 														</label>
 													</th>
+													<th class="detail-col">Details</th>
 													<th>Domain</th>
 													<th>Price</th>
 													<th class="hidden-480">Clicks</th>
@@ -1027,6 +1027,15 @@
 															<input type="checkbox" class="ace" />
 															<span class="lbl"></span>
 														</label>
+													</td>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only">Details</span>
+															</a>
+														</div>
 													</td>
 
 													<td>
@@ -1095,12 +1104,127 @@
 													</td>
 												</tr>
 
+												<tr class="detail-row">
+													<td colspan="8">
+														<div class="table-detail">
+															<div class="row">
+																<div class="col-xs-12 col-sm-2">
+																	<div class="text-center">
+																		<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+																		<br />
+																		<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+																			<div class="inline position-relative">
+																				<a class="user-title-label" href="#">
+																					<i class="ace-icon fa fa-circle light-green"></i>
+																					&nbsp;
+																					<span class="white">Alex M. Doe</span>
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-7">
+																	<div class="space visible-xs"></div>
+
+																	<div class="profile-user-info profile-user-info-striped">
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Username </div>
+
+																			<div class="profile-info-value">
+																				<span>alexdoe</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Location </div>
+
+																			<div class="profile-info-value">
+																				<i class="fa fa-map-marker light-orange bigger-110"></i>
+																				<span>Netherlands, Amsterdam</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Age </div>
+
+																			<div class="profile-info-value">
+																				<span>38</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Joined </div>
+
+																			<div class="profile-info-value">
+																				<span>2010/06/20</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Last Online </div>
+
+																			<div class="profile-info-value">
+																				<span>3 hours ago</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> About Me </div>
+
+																			<div class="profile-info-value">
+																				<span>Bio</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-3">
+																	<div class="space visible-xs"></div>
+																	<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
+
+																	<div class="space-6"></div>
+
+																	<form>
+																		<fieldset>
+																			<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
+																		</fieldset>
+
+																		<div class="hr hr-dotted"></div>
+
+																		<div class="clearfix">
+																			<label class="pull-left">
+																				<input type="checkbox" class="ace" />
+																				<span class="lbl"> Email me a copy</span>
+																			</label>
+
+																			<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
+																				Submit
+																				<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+																			</button>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+
 												<tr>
 													<td class="center">
 														<label class="pos-rel">
 															<input type="checkbox" class="ace" />
 															<span class="lbl"></span>
 														</label>
+													</td>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only">Details</span>
+															</a>
+														</div>
 													</td>
 
 													<td>
@@ -1169,12 +1293,127 @@
 													</td>
 												</tr>
 
+												<tr class="detail-row">
+													<td colspan="8">
+														<div class="table-detail">
+															<div class="row">
+																<div class="col-xs-12 col-sm-2">
+																	<div class="text-center">
+																		<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+																		<br />
+																		<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+																			<div class="inline position-relative">
+																				<a class="user-title-label" href="#">
+																					<i class="ace-icon fa fa-circle light-green"></i>
+																					&nbsp;
+																					<span class="white">Alex M. Doe</span>
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-7">
+																	<div class="space visible-xs"></div>
+
+																	<div class="profile-user-info profile-user-info-striped">
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Username </div>
+
+																			<div class="profile-info-value">
+																				<span>alexdoe</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Location </div>
+
+																			<div class="profile-info-value">
+																				<i class="fa fa-map-marker light-orange bigger-110"></i>
+																				<span>Netherlands, Amsterdam</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Age </div>
+
+																			<div class="profile-info-value">
+																				<span>38</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Joined </div>
+
+																			<div class="profile-info-value">
+																				<span>2010/06/20</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Last Online </div>
+
+																			<div class="profile-info-value">
+																				<span>3 hours ago</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> About Me </div>
+
+																			<div class="profile-info-value">
+																				<span>Bio</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-3">
+																	<div class="space visible-xs"></div>
+																	<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
+
+																	<div class="space-6"></div>
+
+																	<form>
+																		<fieldset>
+																			<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
+																		</fieldset>
+
+																		<div class="hr hr-dotted"></div>
+
+																		<div class="clearfix">
+																			<label class="pull-left">
+																				<input type="checkbox" class="ace" />
+																				<span class="lbl"> Email me a copy</span>
+																			</label>
+
+																			<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
+																				Submit
+																				<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+																			</button>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+
 												<tr>
 													<td class="center">
 														<label class="pos-rel">
 															<input type="checkbox" class="ace" />
 															<span class="lbl"></span>
 														</label>
+													</td>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only">Details</span>
+															</a>
+														</div>
 													</td>
 
 													<td>
@@ -1243,12 +1482,127 @@
 													</td>
 												</tr>
 
+												<tr class="detail-row">
+													<td colspan="8">
+														<div class="table-detail">
+															<div class="row">
+																<div class="col-xs-12 col-sm-2">
+																	<div class="text-center">
+																		<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+																		<br />
+																		<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+																			<div class="inline position-relative">
+																				<a class="user-title-label" href="#">
+																					<i class="ace-icon fa fa-circle light-green"></i>
+																					&nbsp;
+																					<span class="white">Alex M. Doe</span>
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-7">
+																	<div class="space visible-xs"></div>
+
+																	<div class="profile-user-info profile-user-info-striped">
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Username </div>
+
+																			<div class="profile-info-value">
+																				<span>alexdoe</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Location </div>
+
+																			<div class="profile-info-value">
+																				<i class="fa fa-map-marker light-orange bigger-110"></i>
+																				<span>Netherlands, Amsterdam</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Age </div>
+
+																			<div class="profile-info-value">
+																				<span>38</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Joined </div>
+
+																			<div class="profile-info-value">
+																				<span>2010/06/20</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Last Online </div>
+
+																			<div class="profile-info-value">
+																				<span>3 hours ago</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> About Me </div>
+
+																			<div class="profile-info-value">
+																				<span>Bio</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-3">
+																	<div class="space visible-xs"></div>
+																	<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
+
+																	<div class="space-6"></div>
+
+																	<form>
+																		<fieldset>
+																			<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
+																		</fieldset>
+
+																		<div class="hr hr-dotted"></div>
+
+																		<div class="clearfix">
+																			<label class="pull-left">
+																				<input type="checkbox" class="ace" />
+																				<span class="lbl"> Email me a copy</span>
+																			</label>
+
+																			<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
+																				Submit
+																				<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+																			</button>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+
 												<tr>
 													<td class="center">
 														<label class="pos-rel">
 															<input type="checkbox" class="ace" />
 															<span class="lbl"></span>
 														</label>
+													</td>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only">Details</span>
+															</a>
+														</div>
 													</td>
 
 													<td>
@@ -1317,12 +1671,127 @@
 													</td>
 												</tr>
 
+												<tr class="detail-row">
+													<td colspan="8">
+														<div class="table-detail">
+															<div class="row">
+																<div class="col-xs-12 col-sm-2">
+																	<div class="text-center">
+																		<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+																		<br />
+																		<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+																			<div class="inline position-relative">
+																				<a class="user-title-label" href="#">
+																					<i class="ace-icon fa fa-circle light-green"></i>
+																					&nbsp;
+																					<span class="white">Alex M. Doe</span>
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-7">
+																	<div class="space visible-xs"></div>
+
+																	<div class="profile-user-info profile-user-info-striped">
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Username </div>
+
+																			<div class="profile-info-value">
+																				<span>alexdoe</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Location </div>
+
+																			<div class="profile-info-value">
+																				<i class="fa fa-map-marker light-orange bigger-110"></i>
+																				<span>Netherlands, Amsterdam</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Age </div>
+
+																			<div class="profile-info-value">
+																				<span>38</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Joined </div>
+
+																			<div class="profile-info-value">
+																				<span>2010/06/20</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Last Online </div>
+
+																			<div class="profile-info-value">
+																				<span>3 hours ago</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> About Me </div>
+
+																			<div class="profile-info-value">
+																				<span>Bio</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-3">
+																	<div class="space visible-xs"></div>
+																	<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
+
+																	<div class="space-6"></div>
+
+																	<form>
+																		<fieldset>
+																			<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
+																		</fieldset>
+
+																		<div class="hr hr-dotted"></div>
+
+																		<div class="clearfix">
+																			<label class="pull-left">
+																				<input type="checkbox" class="ace" />
+																				<span class="lbl"> Email me a copy</span>
+																			</label>
+
+																			<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
+																				Submit
+																				<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+																			</button>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+
 												<tr>
 													<td class="center">
 														<label class="pos-rel">
 															<input type="checkbox" class="ace" />
 															<span class="lbl"></span>
 														</label>
+													</td>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only">Details</span>
+															</a>
+														</div>
 													</td>
 
 													<td>
@@ -1386,6 +1855,112 @@
 																		</a>
 																	</li>
 																</ul>
+															</div>
+														</div>
+													</td>
+												</tr>
+
+												<tr class="detail-row">
+													<td colspan="8">
+														<div class="table-detail">
+															<div class="row">
+																<div class="col-xs-12 col-sm-2">
+																	<div class="text-center">
+																		<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+																		<br />
+																		<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+																			<div class="inline position-relative">
+																				<a class="user-title-label" href="#">
+																					<i class="ace-icon fa fa-circle light-green"></i>
+																					&nbsp;
+																					<span class="white">Alex M. Doe</span>
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-7">
+																	<div class="space visible-xs"></div>
+
+																	<div class="profile-user-info profile-user-info-striped">
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Username </div>
+
+																			<div class="profile-info-value">
+																				<span>alexdoe</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Location </div>
+
+																			<div class="profile-info-value">
+																				<i class="fa fa-map-marker light-orange bigger-110"></i>
+																				<span>Netherlands, Amsterdam</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Age </div>
+
+																			<div class="profile-info-value">
+																				<span>38</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Joined </div>
+
+																			<div class="profile-info-value">
+																				<span>2010/06/20</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Last Online </div>
+
+																			<div class="profile-info-value">
+																				<span>3 hours ago</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> About Me </div>
+
+																			<div class="profile-info-value">
+																				<span>Bio</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-3">
+																	<div class="space visible-xs"></div>
+																	<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
+
+																	<div class="space-6"></div>
+
+																	<form>
+																		<fieldset>
+																			<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
+																		</fieldset>
+
+																		<div class="hr hr-dotted"></div>
+
+																		<div class="clearfix">
+																			<label class="pull-left">
+																				<input type="checkbox" class="ace" />
+																				<span class="lbl"> Email me a copy</span>
+																			</label>
+
+																			<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
+																				Submit
+																				<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+																			</button>
+																		</div>
+																	</form>
+																</div>
 															</div>
 														</div>
 													</td>
@@ -3168,7 +3743,9 @@
 											</div>
 										</div><!-- /.modal-content -->
 									</div><!-- /.modal-dialog -->
-								</div><!-- PAGE CONTENT ENDS -->
+								</div>
+
+								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
@@ -3209,25 +3786,12 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="assets/js/jquery.1.11.1.min.js"></script>
-<![endif]-->
-
-		<!--[if !IE]> -->
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-		</script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
-</script>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -3237,8 +3801,12 @@
 		<!-- page specific plugin scripts -->
 		<script src="assets/js/jquery.dataTables.min.js"></script>
 		<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
-		<script src="assets/js/dataTables.tableTools.min.js"></script>
-		<script src="assets/js/dataTables.colVis.min.js"></script>
+		<script src="assets/js/dataTables.buttons.min.js"></script>
+		<script src="assets/js/buttons.flash.min.js"></script>
+		<script src="assets/js/buttons.html5.min.js"></script>
+		<script src="assets/js/buttons.print.min.js"></script>
+		<script src="assets/js/buttons.colVis.min.js"></script>
+		<script src="assets/js/dataTables.select.min.js"></script>
 
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
@@ -3248,10 +3816,10 @@
 		<script type="text/javascript">
 			jQuery(function($) {
 				//initiate dataTables plugin
-				var oTable1 = 
+				var myTable = 
 				$('#dynamic-table')
 				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
-				.dataTable( {
+				.DataTable( {
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
@@ -3259,6 +3827,11 @@
 					  { "bSortable": false }
 					],
 					"aaSorting": [],
+					
+					
+					//"bProcessing": true,
+			        //"bServerSide": true,
+			        //"sAjaxSource": "http://127.0.0.1/table.php"	,
 			
 					//,
 					//"sScrollY": "200px",
@@ -3271,155 +3844,136 @@
 					//you may want to wrap the table inside a "div.dataTables_borderWrap" element
 			
 					//"iDisplayLength": 50
-			    } );
-				//oTable1.fnAdjustColumnSizing();
 			
 			
-				//TableTools settings
-				TableTools.classes.container = "btn-group btn-overlap";
-				TableTools.classes.print = {
-					"body": "DTTT_Print",
-					"info": "tableTools-alert gritter-item-wrapper gritter-info gritter-center white",
-					"message": "tableTools-print-navbar"
-				}
-			
-				//initiate TableTools extension
-				var tableTools_obj = new $.fn.dataTable.TableTools( oTable1, {
-					"sSwfPath": "assets/swf/copy_csv_xls_pdf.swf",
-					
-					"sRowSelector": "td:not(:last-child)",
-					"sRowSelect": "multi",
-					"fnRowSelected": function(row) {
-						//check checkbox when row is selected
-						try { $(row).find('input[type=checkbox]').get(0).checked = true }
-						catch(e) {}
-					},
-					"fnRowDeselected": function(row) {
-						//uncheck checkbox
-						try { $(row).find('input[type=checkbox]').get(0).checked = false }
-						catch(e) {}
-					},
-			
-					"sSelectedClass": "success",
-			        "aButtons": [
-						{
-							"sExtends": "copy",
-							"sToolTip": "Copy to clipboard",
-							"sButtonClass": "btn btn-white btn-primary btn-bold",
-							"sButtonText": "<i class='fa fa-copy bigger-110 pink'></i>",
-							"fnComplete": function() {
-								this.fnInfo( '<h3 class="no-margin-top smaller">Table copied</h3>\
-									<p>Copied '+(oTable1.fnSettings().fnRecordsTotal())+' row(s) to the clipboard.</p>',
-									1500
-								);
-							}
-						},
-						
-						{
-							"sExtends": "csv",
-							"sToolTip": "Export to CSV",
-							"sButtonClass": "btn btn-white btn-primary  btn-bold",
-							"sButtonText": "<i class='fa fa-file-excel-o bigger-110 green'></i>"
-						},
-						
-						{
-							"sExtends": "pdf",
-							"sToolTip": "Export to PDF",
-							"sButtonClass": "btn btn-white btn-primary  btn-bold",
-							"sButtonText": "<i class='fa fa-file-pdf-o bigger-110 red'></i>"
-						},
-						
-						{
-							"sExtends": "print",
-							"sToolTip": "Print view",
-							"sButtonClass": "btn btn-white btn-primary  btn-bold",
-							"sButtonText": "<i class='fa fa-print bigger-110 grey'></i>",
-							
-							"sMessage": "<div class='navbar navbar-default'><div class='navbar-header pull-left'><a class='navbar-brand' href='#'><small>Optional Navbar &amp; Text</small></a></div></div>",
-							
-							"sInfo": "<h3 class='no-margin-top'>Print view</h3>\
-									  <p>Please use your browser's print function to\
-									  print this table.\
-									  <br />Press <b>escape</b> when finished.</p>",
-						}
-			        ]
-			    } );
-				//we put a container before our table and append TableTools element to it
-			    $(tableTools_obj.fnContainer()).appendTo($('.tableTools-container'));
-				
-				//also add tooltips to table tools buttons
-				//addding tooltips directly to "A" buttons results in buttons disappearing (weired! don't know why!)
-				//so we add tooltips to the "DIV" child after it becomes inserted
-				//flash objects inside table tools buttons are inserted with some delay (100ms) (for some reason)
-				setTimeout(function() {
-					$(tableTools_obj.fnContainer()).find('a.DTTT_button').each(function() {
-						var div = $(this).find('> div');
-						if(div.length > 0) div.tooltip({container: 'body'});
-						else $(this).tooltip({container: 'body'});
-					});
-				}, 200);
-				
-				
-				
-				//ColVis extension
-				var colvis = new $.fn.dataTable.ColVis( oTable1, {
-					"buttonText": "<i class='fa fa-search'></i>",
-					"aiExclude": [0, 6],
-					"bShowAll": true,
-					//"bRestore": true,
-					"sAlign": "right",
-					"fnLabel": function(i, title, th) {
-						return $(th).text();//remove icons, etc
+					select: {
+						style: 'multi'
 					}
+			    } );
+			
+				
+				
+				$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
+				
+				new $.fn.dataTable.Buttons( myTable, {
+					buttons: [
+					  {
+						"extend": "colvis",
+						"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+						"className": "btn btn-white btn-primary btn-bold",
+						columns: ':not(:first):not(:last)'
+					  },
+					  {
+						"extend": "copy",
+						"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
+						"className": "btn btn-white btn-primary btn-bold"
+					  },
+					  {
+						"extend": "csv",
+						"text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
+						"className": "btn btn-white btn-primary btn-bold"
+					  },
+					  {
+						"extend": "excel",
+						"text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+						"className": "btn btn-white btn-primary btn-bold"
+					  },
+					  {
+						"extend": "pdf",
+						"text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
+						"className": "btn btn-white btn-primary btn-bold"
+					  },
+					  {
+						"extend": "print",
+						"text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
+						"className": "btn btn-white btn-primary btn-bold",
+						autoPrint: false,
+						message: 'This print was produced using the Print button for DataTables'
+					  }		  
+					]
+				} );
+				myTable.buttons().container().appendTo( $('.tableTools-container') );
+				
+				//style the message box
+				var defaultCopyAction = myTable.button(1).action();
+				myTable.button(1).action(function (e, dt, button, config) {
+					defaultCopyAction(e, dt, button, config);
+					$('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
+				});
+				
+				
+				var defaultColvisAction = myTable.button(0).action();
+				myTable.button(0).action(function (e, dt, button, config) {
 					
-				}); 
+					defaultColvisAction(e, dt, button, config);
+					
+					
+					if($('.dt-button-collection > .dropdown-menu').length == 0) {
+						$('.dt-button-collection')
+						.wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
+						.find('a').attr('href', '#').wrap("<li />")
+					}
+					$('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
+				});
+			
+				////
+			
+				setTimeout(function() {
+					$($('.tableTools-container')).find('a.dt-button').each(function() {
+						var div = $(this).find(' > div').first();
+						if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
+						else $(this).tooltip({container: 'body', title: $(this).text()});
+					});
+				}, 500);
 				
-				//style it
-				$(colvis.button()).addClass('btn-group').find('button').addClass('btn btn-white btn-info btn-bold')
 				
-				//and append it to our table tools btn-group, also add tooltip
-				$(colvis.button())
-				.prependTo('.tableTools-container .btn-group')
-				.attr('title', 'Show/hide columns').tooltip({container: 'body'});
 				
-				//and make the list, buttons and checkboxed Ace-like
-				$(colvis.dom.collection)
-				.addClass('dropdown-menu dropdown-light dropdown-caret dropdown-caret-right')
-				.find('li').wrapInner('<a href="javascript:void(0)" />') //'A' tag is required for better styling
-				.find('input[type=checkbox]').addClass('ace').next().addClass('lbl padding-8');
+				
+				
+				myTable.on( 'select', function ( e, dt, type, index ) {
+					if ( type === 'row' ) {
+						$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
+					}
+				} );
+				myTable.on( 'deselect', function ( e, dt, type, index ) {
+					if ( type === 'row' ) {
+						$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
+					}
+				} );
 			
 			
-				
+			
+			
 				/////////////////////////////////
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 				
 				//select/deselect all rows according to table header checkbox
-				$('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+				$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
 					
-					$(this).closest('table').find('tbody > tr').each(function(){
+					$('#dynamic-table').find('tbody > tr').each(function(){
 						var row = this;
-						if(th_checked) tableTools_obj.fnSelect(row);
-						else tableTools_obj.fnDeselect(row);
+						if(th_checked) myTable.row(row).select();
+						else  myTable.row(row).deselect();
 					});
 				});
 				
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 					var row = $(this).closest('tr').get(0);
-					if(!this.checked) tableTools_obj.fnSelect(row);
-					else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+					if(this.checked) myTable.row(row).deselect();
+					else myTable.row(row).select();
 				});
-				
 			
-				
-				
-					$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+			
+			
+				$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
 					e.stopImmediatePropagation();
 					e.stopPropagation();
 					e.preventDefault();
 				});
+				
 				
 				
 				//And for the first simple table, which doesn't have TableTools or dataTables
@@ -3438,6 +3992,7 @@
 				//select/deselect a row when the checkbox is checked/unchecked
 				$('#simple-table').on('click', 'td input[type=checkbox]' , function(){
 					var $row = $(this).closest('tr');
+					if($row.is('.detail-row ')) return;
 					if(this.checked) $row.addClass(active_class);
 					else $row.removeClass(active_class);
 				});
@@ -3461,6 +4016,34 @@
 					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
 					return 'left';
 				}
+				
+				
+				
+				
+				/***************/
+				$('.show-details-btn').on('click', function(e) {
+					e.preventDefault();
+					$(this).closest('tr').next().toggleClass('open');
+					$(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
+				});
+				/***************/
+				
+				
+				
+				
+				
+				/**
+				//add horizontal scrollbars to a simple table
+				$('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
+				  {
+					horizontal: true,
+					styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
+					size: 2000,
+					mouseWheelLock: true
+				  }
+				).css('padding-top', '12px');
+				*/
+			
 			
 			})
 		</script>
