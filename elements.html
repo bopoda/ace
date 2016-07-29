@@ -10,14 +10,14 @@
 
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
 		<link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
 		<link rel="stylesheet" href="assets/css/jquery.gritter.min.css" />
 
 		<!-- text fonts -->
-		<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
 
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
@@ -25,6 +25,8 @@
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -63,12 +65,8 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="navbar-container" id="navbar-container">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
 					<span class="sr-only">Toggle sidebar</span>
 
@@ -90,7 +88,7 @@
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-						<li class="grey">
+						<li class="grey dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-tasks"></i>
 								<span class="badge badge-grey">4</span>
@@ -167,7 +165,7 @@
 							</ul>
 						</li>
 
-						<li class="purple">
+						<li class="purple dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 								<span class="badge badge-important">8</span>
@@ -235,7 +233,7 @@
 							</ul>
 						</li>
 
-						<li class="green">
+						<li class="green dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 								<span class="badge badge-success">5</span>
@@ -251,7 +249,7 @@
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+												<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -268,7 +266,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+												<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -285,7 +283,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+												<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -302,7 +300,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+												<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -319,7 +317,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+												<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -345,9 +343,9 @@
 							</ul>
 						</li>
 
-						<li class="light-blue">
+						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -386,14 +384,14 @@
 			</div><!-- /.navbar-container -->
 		</div>
 
-		<div class="main-container" id="main-container">
+		<div class="main-container ace-save-state" id="main-container">
 			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+				try{ace.settings.loadState('main-container')}catch(e){}
 			</script>
 
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
 				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
@@ -814,6 +812,15 @@
 							</li>
 
 							<li class="">
+								<a href="search.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Search Results
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
 								<a href="email.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Email Templates
@@ -898,21 +905,13 @@
 				</ul><!-- /.nav-list -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
 				</div>
-
-				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
-				</script>
 			</div>
 
 			<div class="main-content">
 				<div class="main-content-inner">
-					<div class="breadcrumbs" id="breadcrumbs">
-						<script type="text/javascript">
-							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-						</script>
-
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
@@ -956,27 +955,27 @@
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
 										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
 										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
 										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
 										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
 										<label class="lbl" for="ace-settings-add-container">
 											Inside
 											<b>.container</b>
@@ -986,17 +985,17 @@
 
 								<div class="pull-left width-50">
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
 										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
 										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
 										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
 									</div>
 								</div><!-- /.pull-left -->
@@ -1710,7 +1709,7 @@
 														<i class="ace-icon fa fa-caret-right pull-right"></i>
 													</a>
 
-													<ul class="dropdown-menu pull-left">
+													<ul class="dropdown-menu dropdown-light">
 														<li>
 															<a href="#" tabindex="-1">Second level link</a>
 														</li>
@@ -1758,7 +1757,7 @@
 														<i class="ace-icon fa fa-caret-left pull-right"></i>
 													</a>
 
-													<ul class="dropdown-menu dropdown-menu-right">
+													<ul class="dropdown-menu dropdown-purple dropdown-menu-right">
 														<li>
 															<a href="#" tabindex="-1">Second level link</a>
 														</li>
@@ -1823,7 +1822,7 @@
 												<label class="pull-right inline">
 													<small class="muted">Stacked:</small>
 
-													<input id="id-pills-stacked" checked="" type="checkbox" class="ace ace-switch ace-switch-5" />
+													<input id="id-pills-stacked" type="checkbox" class="ace ace-switch ace-switch-5" />
 													<span class="lbl middle"></span>
 												</label>
 											</span><!-- /.col -->
@@ -1844,10 +1843,6 @@
 										</ul>
 									</div>
 								</div>
-
-								<script type="text/javascript">
-									var $path_assets = "dist";//this will be used in gritter alerts containing images
-								</script>
 
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
@@ -1890,25 +1885,12 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="assets/js/jquery.1.11.1.min.js"></script>
-<![endif]-->
-
-		<!--[if !IE]> -->
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-		</script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
-</script>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -1922,10 +1904,10 @@
 		<![endif]-->
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/bootbox.min.js"></script>
+		<script src="assets/js/bootbox.js"></script>
 		<script src="assets/js/jquery.easypiechart.min.js"></script>
 		<script src="assets/js/jquery.gritter.min.js"></script>
-		<script src="assets/js/spin.min.js"></script>
+		<script src="assets/js/spin.js"></script>
 
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
@@ -1965,7 +1947,6 @@
 				//$('[href="#collapseTwo"]').trigger('click');
 			
 			
-				var oldie = /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase());
 				$('.easy-pie-chart.percentage').each(function(){
 					$(this).easyPieChart({
 						barColor: $(this).data('color'),
@@ -1973,7 +1954,7 @@
 						scaleColor: false,
 						lineCap: 'butt',
 						lineWidth: 8,
-						animate: oldie ? false : 1000,
+						animate: ace.vars['old_ie'] ? false : 1000,
 						size:75
 					}).css('color', $(this).data('color'));
 				});
@@ -1986,7 +1967,7 @@
 					$.gritter.add({
 						title: 'This is a regular notice!',
 						text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-						image: 'assets/avatars/avatar1.png', //in Ace demo dist will be replaced by correct assets path
+						image: 'assets/images/avatars/avatar1.png', //in Ace demo ./dist will be replaced by correct assets path
 						sticky: false,
 						time: '',
 						class_name: (!$('#gritter-light').get(0).checked ? 'gritter-light' : '')
@@ -1999,7 +1980,7 @@
 					var unique_id = $.gritter.add({
 						title: 'This is a sticky notice!',
 						text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-						image: 'assets/avatars/avatar.png',
+						image: 'assets/images/avatars/avatar.png',
 						sticky: true,
 						time: '',
 						class_name: 'gritter-info' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
@@ -2026,7 +2007,7 @@
 					$.gritter.add({
 						title: 'This is a notice with a max of 3 on screen at one time!',
 						text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-						image: 'assets/avatars/avatar3.png', //in Ace demo dist will be replaced by correct assets path
+						image: 'assets/images/avatars/avatar3.png', //in Ace demo ./dist will be replaced by correct assets path
 						sticky: false,
 						before_open: function(){
 							if($('.gritter-item-wrapper').length >= 3)
@@ -2110,11 +2091,12 @@
 					);
 				});
 			**/
-					
+				
+			
 				$("#bootbox-options").on(ace.click_event, function() {
 					bootbox.dialog({
 						message: "<span class='bigger-110'>I am a custom dialog with smaller buttons</span>",
-						buttons: 			
+						buttons:
 						{
 							"success" :
 							 {

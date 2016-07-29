@@ -10,12 +10,12 @@
 
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
 
 		<!-- text fonts -->
-		<link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
 
 		<!-- ace styles -->
 		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
@@ -23,6 +23,8 @@
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -42,12 +44,8 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="navbar-container" id="navbar-container">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
 					<span class="sr-only">Toggle sidebar</span>
 
@@ -69,7 +67,7 @@
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-						<li class="grey">
+						<li class="grey dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-tasks"></i>
 								<span class="badge badge-grey">4</span>
@@ -146,7 +144,7 @@
 							</ul>
 						</li>
 
-						<li class="purple">
+						<li class="purple dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 								<span class="badge badge-important">8</span>
@@ -214,7 +212,7 @@
 							</ul>
 						</li>
 
-						<li class="green">
+						<li class="green dropdown-modal">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 								<span class="badge badge-success">5</span>
@@ -230,7 +228,7 @@
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+												<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -247,7 +245,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+												<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -264,7 +262,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+												<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -281,7 +279,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+												<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -298,7 +296,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+												<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -324,9 +322,9 @@
 							</ul>
 						</li>
 
-						<li class="light-blue">
+						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -365,14 +363,14 @@
 			</div><!-- /.navbar-container -->
 		</div>
 
-		<div class="main-container" id="main-container">
+		<div class="main-container ace-save-state" id="main-container">
 			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+				try{ace.settings.loadState('main-container')}catch(e){}
 			</script>
 
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
 				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
@@ -793,6 +791,15 @@
 							</li>
 
 							<li class="">
+								<a href="search.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Search Results
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
 								<a href="email.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Email Templates
@@ -877,21 +884,13 @@
 				</ul><!-- /.nav-list -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
 				</div>
-
-				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
-				</script>
 			</div>
 
 			<div class="main-content">
 				<div class="main-content-inner">
-					<div class="breadcrumbs" id="breadcrumbs">
-						<script type="text/javascript">
-							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-						</script>
-
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
@@ -931,27 +930,27 @@
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
 										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
 										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
 										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
 										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
 										<label class="lbl" for="ace-settings-add-container">
 											Inside
 											<b>.container</b>
@@ -961,17 +960,17 @@
 
 								<div class="pull-left width-50">
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
 										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
 										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
 									</div>
 
 									<div class="ace-settings-item">
-										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
 										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
 									</div>
 								</div><!-- /.pull-left -->
@@ -1001,9 +1000,9 @@
 									Welcome to
 									<strong class="green">
 										Ace
-										<small>(v1.3.3)</small>
+										<small>(v1.4)</small>
 									</strong>,
-	легкий, много-функциональный и простой в использовании шаблон для админки на bootstrap 3.3. Загрузить исходники с <a href="https://github.com/bopoda/ace">github</a> (with minified ace js files).
+	лёгкий, многофункциональный и простой в использовании шаблон для админки на bootstrap 3.3.6. Загрузить исходники с <a href="https://github.com/bopoda/ace">github</a> (with minified ace js/css files).
 								</div>
 
 								<div class="row">
@@ -1435,7 +1434,7 @@
 																		<span class="lbl"> Adding new features</span>
 																	</label>
 
-																	<div class="inline pull-right position-relative dropdown-hover">
+																	<div class="pull-right pos-rel dropdown-hover">
 																		<button class="btn btn-minier bigger btn-primary">
 																			<i class="ace-icon fa fa-cog icon-only bigger-120"></i>
 																		</button>
@@ -1494,7 +1493,7 @@
 															<div class="clearfix">
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="assets/avatars/user.jpg" />
+																		<img alt="Bob Doe's avatar" src="assets/images/avatars/user.jpg" />
 																	</div>
 
 																	<div class="body">
@@ -1547,7 +1546,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Joe Doe's avatar" src="assets/avatars/avatar2.png" />
+																		<img alt="Joe Doe's avatar" src="assets/images/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -1600,7 +1599,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Jim Doe's avatar" src="assets/avatars/avatar.png" />
+																		<img alt="Jim Doe's avatar" src="assets/images/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
@@ -1653,7 +1652,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alex Doe's avatar" src="assets/avatars/avatar5.png" />
+																		<img alt="Alex Doe's avatar" src="assets/images/avatars/avatar5.png" />
 																	</div>
 
 																	<div class="body">
@@ -1674,7 +1673,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="assets/avatars/avatar2.png" />
+																		<img alt="Bob Doe's avatar" src="assets/images/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -1695,7 +1694,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Susan's avatar" src="assets/avatars/avatar3.png" />
+																		<img alt="Susan's avatar" src="assets/images/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
@@ -1716,7 +1715,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Phil Doe's avatar" src="assets/avatars/avatar4.png" />
+																		<img alt="Phil Doe's avatar" src="assets/images/avatars/avatar4.png" />
 																	</div>
 
 																	<div class="body">
@@ -1737,7 +1736,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alexa Doe's avatar" src="assets/avatars/avatar1.png" />
+																		<img alt="Alexa Doe's avatar" src="assets/images/avatars/avatar1.png" />
 																	</div>
 
 																	<div class="body">
@@ -1776,7 +1775,7 @@
 															<div class="comments">
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's Avatar" src="assets/avatars/avatar.png" />
+																		<img alt="Bob Doe's Avatar" src="assets/images/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
@@ -1832,7 +1831,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Jennifer's Avatar" src="assets/avatars/avatar1.png" />
+																		<img alt="Jennifer's Avatar" src="assets/images/avatars/avatar1.png" />
 																	</div>
 
 																	<div class="body">
@@ -1866,7 +1865,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Joe's Avatar" src="assets/avatars/avatar2.png" />
+																		<img alt="Joe's Avatar" src="assets/images/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -1900,7 +1899,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Rita's Avatar" src="assets/avatars/avatar3.png" />
+																		<img alt="Rita's Avatar" src="assets/images/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
@@ -1967,7 +1966,7 @@
 													<div class="dialogs">
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="assets/images/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -1991,7 +1990,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="John's Avatar" src="assets/avatars/avatar.png" />
+																<img alt="John's Avatar" src="assets/images/avatars/avatar.png" />
 															</div>
 
 															<div class="body">
@@ -2015,7 +2014,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Bob's Avatar" src="assets/avatars/user.jpg" />
+																<img alt="Bob's Avatar" src="assets/images/avatars/user.jpg" />
 															</div>
 
 															<div class="body">
@@ -2040,7 +2039,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Jim's Avatar" src="assets/avatars/avatar4.png" />
+																<img alt="Jim's Avatar" src="assets/images/avatars/avatar4.png" />
 															</div>
 
 															<div class="body">
@@ -2064,7 +2063,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="assets/images/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -2147,25 +2146,12 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery.2.1.1.min.js"></script>
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="assets/js/jquery.1.11.1.min.js"></script>
-<![endif]-->
-
-		<!--[if !IE]> -->
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-		</script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
-</script>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -2180,7 +2166,7 @@
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/jquery.easypiechart.min.js"></script>
-		<script src="assets/js/jquery.sparkline.min.js"></script>
+		<script src="assets/js/jquery.sparkline.index.min.js"></script>
 		<script src="assets/js/jquery.flot.min.js"></script>
 		<script src="assets/js/jquery.flot.pie.min.js"></script>
 		<script src="assets/js/jquery.flot.resize.min.js"></script>
@@ -2203,7 +2189,7 @@
 						scaleColor: false,
 						lineCap: 'butt',
 						lineWidth: parseInt(size/10),
-						animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+						animate: ace.vars['old_ie'] ? false : 1000,
 						size: size
 					});
 				})
@@ -2367,13 +2353,14 @@
 				//Android's default browser somehow is confused when tapping on label which will lead to dragging the task
 				//so disable dragging when clicking on label
 				var agent = navigator.userAgent.toLowerCase();
-				if("ontouchstart" in document && /applewebkit/.test(agent) && /android/.test(agent))
+				if(ace.vars['touch'] && ace.vars['android']) {
 				  $('#tasks').on('touchstart', function(e){
 					var li = $(e.target).closest('#tasks li');
 					if(li.length == 0)return;
 					var label = li.find('label.inline').get(0);
 					if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
-				});
+				  });
+				}
 			
 				$('#tasks').sortable({
 					opacity:0.8,
