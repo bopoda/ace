@@ -1,20 +1,18 @@
-<b>Warning!</b> It`s only copy of <a href="http://wrapbootstrap.com/preview/WB0B30DGR">ace demo-template</a> from wrapbootstrap.
-Repo contains minified ace js/css files.
-You can read more about the license <a href="https://wrapbootstrap.com/theme/ace-responsive-admin-template-WB0B30DGR">here</a>.
+Ace Admin：
 
-<h3>I`m not developer of this theme.</h3>
+1、兼容BootStrap，兼容Jquery 
 
-<h2>Twitter bootstrap 3 admin template</h2>
+2、图标使用font awesome 3.2
 
-see example http://ace.jeka.by/
+3、表格可以用bootstrap的表格，也可以用jqueryui的表格，也可以用jqgrid的表格
 
+4、图表的话，我看ace里有jquery.flot 和?jquery.easy-pie-chart。不过我自己使用的百度的 Echarts，这个功能比较强大。
 
-Try:
-- git clone git@github.com:bopoda/ace.git
-- open ace/index.html in your desktop or mobile browser
+5、提示框 bootbox.js
 
+6、日历插件，有daterangepicker.min.js等，不过我用的My97DatePicker
 
-Простой и многофункциональный Twitter bootstrap 3 шаблон для админки. Responsive дизайн.
+7、另外ace admin还预设了4中样式效果，固定页面中一些元素，宽屏窄屏等等。
 
 Browsers:
 - Internet Explorer 10
